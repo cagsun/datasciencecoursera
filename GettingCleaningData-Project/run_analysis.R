@@ -46,6 +46,7 @@ selectedColumns<-c(as.character(featuresSubset), "subject", "activity")
 finalData = subset(fullData,select=selectedColumns)
 
 # STEP 3
+# ------------------------------------------------
 # Get the list of activity names corresponding to activity id's from the "activity_labels" text file
 activityLabels = read.table("activity_labels.txt",header = FALSE)
 # Make the activity names more readable
@@ -55,6 +56,7 @@ activityLabels[, 2] = gsub("_", "", tolower(as.character(activityLabels[, 2])))
 finalData[,68] = activityLabels[finalData[,68], 2]
 
 # STEP 4
+# ------------------------------------------------
 # Final corrections to variable names, to make them more readable & descriptive
 names(finalData) = gsub("^t", "time-", names(finalData))
 names(finalData) = gsub("^f", "frequency-", names(finalData))
@@ -63,6 +65,7 @@ names(finalData) = gsub("Gyro", "RotationSpeed-", names(finalData))
 names(finalData) = gsub("BodyBody", "Body", names(finalData))
 
 # STEP 5
+# ------------------------------------------------
 # Call the plyr library for aggregate function
 library(plyr)
 # Summarizes the data by taking the mean of all variables for each subject & each activity 
