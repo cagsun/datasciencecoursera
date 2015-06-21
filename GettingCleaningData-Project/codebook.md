@@ -20,9 +20,9 @@ The steps of its operation are as follows:
 In detail:
 
 1. Loads the data into R for both training & test sets
-	i. Loads Measurements Data
-	ii. Loads Subjects Data that shows measurements' subject person
-	iii. Loads Activity Data that shows which Activity measurements Belong To
+	a. Loads Measurements Data
+	b. Loads Subjects Data that shows measurements' subject person
+	c. Loads Activity Data that shows which Activity measurements Belong To
 2. Merges training & test sets in each of these 3 data sets with rbind() function (measurements, subjects, activities)
 3. Sets descriptive header names to columns in these 3 datasets
 4. Brings these 3 data frames together with cbind() function
